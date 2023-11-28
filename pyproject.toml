@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[project]
+name = "promptducer"
+version = "0.1.0"
+dynamic = ["dependencies"]
+
+authors = [
+    { name = "Gabor Antal", email = "antal@inf.u-szeged.hu" },
+]
+description = "PROMPTducer, a Universal LLM prompting tool"
+readme = "README.md"
+requires-python = ">=3.7"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+promptducer = "promptducer.main:main"
+
+[project.urls]
+"Homepage" = "https://github.com/promptducer/promptducer"
+"Bug Tracker" = "https://github.com/promptducer/promptducer/issues"
+
+[tool.hatch.build.targets.wheel]
+include = ["/promptducer"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/promptducer", "/requirements.txt"]
+exclude = ["/tests"]
+
+[tool.hatch.metadata.hooks.requirements_txt]
+filename = "requirements.txt"

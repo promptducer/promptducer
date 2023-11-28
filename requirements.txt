@@ -1,0 +1,9 @@
+openai==0.28
+setuptools>=68.0.0
+tqdm~=4.65.0
+requests~=2.31.0
+python-dotenv~=1.0.0
+ConfigArgParse~=1.7
+sphinx~=7.2.6
+tiktoken==0.5.1
+
