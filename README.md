@@ -60,6 +60,24 @@ promptducer -s path/to/data -p GenDoc --prompt_file path/to/promp/GenDoc.py -r p
 Instead of command-line arguments, a configuration file can be used.
 An example of it can be found in `example.conf`.
 
+**Important note:** It is currently necessary to have a JSON file (with the same name) alongside each input file. This allows injecting various metadata individually into the prompt being used. If there is no metadata, a valid empty JSON file should be created.
+
+For example, next to `SourceFile.java` there must be a `SourceFile.json`, too.
+```
+promptducer
+|-source_base_dir
+| |-SourceFile.java
+| |-SourceFile.json
+```
+
+Content of `SourceFile.json`, if there is no metadata:
+```
+{}
+```
+
+Otherwise, the specified values can be fetched in the prompt templates. 
+
+
 ## Citation
 
 If you use this tool, please consider citing it in your work:
